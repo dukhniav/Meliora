@@ -1,1 +1,3 @@
-from meliora.persistance import database, models
+"""
+Persistance classes
+"""

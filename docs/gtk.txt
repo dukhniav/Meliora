@@ -1,0 +1,1 @@
+-pylint -> $ pylint $(find . -name "*.py" | xargs)

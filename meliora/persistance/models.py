@@ -27,8 +27,9 @@ class Exchanges(_DECL_BASE):
 
     __tablename__ = "exchanges"
 
-    exchange_id = Column(Integer,primary_key=True, autoincrement="auto")
+    exchange_id = Column(Integer, primary_key=True, autoincrement="auto")
     name = Column(String(250), nullable=false)
+
 
 class Wallets(_DECL_BASE):
     """Wallets model"""
