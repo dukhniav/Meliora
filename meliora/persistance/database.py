@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 
 engine = create_engine(
     'sqlite:///data/meliora.db',
-    echo=True,
+    #echo=True,
     future=True
 )
 Session = sessionmaker(bind=engine)
