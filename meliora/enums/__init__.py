@@ -1,6 +1,4 @@
 """
 Enum classes
 """
-import fee
-import mode
-import notification
+from meliora.enums import fee, mode, notification
