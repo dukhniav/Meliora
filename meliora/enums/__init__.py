@@ -1,4 +1,4 @@
-"""
-Enum classes
-"""
-from meliora.enums import fee, mode, notification
+# flake8: noqa: F401
+
+from meliora.enums.mode import REAL_MODES, RunMode
+from meliora.enums.state import State
