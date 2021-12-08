@@ -137,3 +137,10 @@ dmypy.json
 .DS_Store
 
 /include
+
+# meliora
+/data/historical_data/*
+/data/trans
+/data/test_transactions.txt
+/data/sample_coins.txt
+/config

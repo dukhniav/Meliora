@@ -1,1 +1,14 @@
-BTC SELL 50000 0.5
+
+    trans_id = Column(Integer, primary_key=True, autoincrement="auto")
+    symbol_id = Column(String(255), unique=True, nullable=False)
+    quantity = Column(Float, nullable=False)
+    price = Column(Float, nullable=False)
+    fees = Column(Float, nullable=False)
+    total = Column(Float, nullable=False)
+    source = Column(String(250), nullable=False)
+    destination = Column(String(250), nullable=False)
+    exchange_id = Column(Integer, nullable=False)
+    ledger_id = Column(Integer, nullable=False)
+    link = Column(String(250), nullable=False)
+    when = Column(DateTime, nullable=False)
+

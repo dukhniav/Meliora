@@ -2,6 +2,7 @@
 from sqlalchemy import Column
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql.expression import false
+from sqlalchemy.sql.sqltypes import Boolean
 from sqlalchemy.types import Integer, Text, String, DateTime, Float
 from sqlalchemy.sql import func
 
@@ -56,22 +57,25 @@ class Portfolio(_DECL_BASE):
     assets = Column(Float, nullable=False)
 
 
-class Transactions(_DECL_BASE):
+class Transaction(_DECL_BASE):
     """Transactions model"""
     __tablename__ = "transactions"
 
-    trans_id = Column(Integer, primary_key=True, autoincrement="auto")
-    symbol_id = Column(String(255), unique=True, nullable=False)
-    quantity = Column(Float, nullable=False)
-    price = Column(Float, nullable=False)
-    fees = Column(Float, nullable=False)
-    total = Column(Float, nullable=False)
-    source = Column(String(250), nullable=False)
-    destination = Column(String(250), nullable=False)
-    exchange_id = Column(Integer, nullable=False)
-    ledger_id = Column(Integer, nullable=False)
-    link = Column(String(250), nullable=False)
-    when = Column(DateTime, nullable=False)
+    id = Column(Integer, primary_key=True, autoincrement="auto")
+    block_number = Column(Integer, nullable=False)
+    timstamp = Column(DateTime, nullable=False)
+    hash = Column(String(255), nullable=False)
+    source = Column(String(355), nullable=False)
+    destination = Column(String(255), nullable=False)
+    value = Column(Float, nullable=False)
+    contract = Column(String(255), nullable=True)
+    input = Column(String(255), nullable=True)
+    trans_type = Column(String(255), nullable=False)
+    gas = Column(Integer, nullable=False)
+    gas_used = Column(Integer, nullable=False)
+    trace_id = Column(String(255), nullable=False)
+    is_error = Column(Boolean, nullable=False)
+    err_code = Column(String(255), nullable=False)
 
 
 _DECL_BASE.metadata.create_all(engine)
