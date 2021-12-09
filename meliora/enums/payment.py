@@ -1,3 +1,4 @@
+"""Types of payment types"""
 from enum import Enum
 
 

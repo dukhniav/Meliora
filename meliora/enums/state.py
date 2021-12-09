@@ -1,10 +1,12 @@
+"""Types of run states"""
 from enum import Enum
-
 
 class State(Enum):
     """
     Bot state
     """
-    STOP = "Stopped"
-    RUN = "Running"
-    RELOAD = "Reload"
+    STOP = "stopped"
+    RUN = "running"
+    RELOAD = "reload"
+    EXIT = "exit"
+    NEW = "new"

@@ -1,3 +1,5 @@
+"""Types of run modes"""
+
 from enum import Enum
 
 

@@ -1,10 +1,10 @@
+# pylint: disable=too-few-public-methods
 """SQLAlchemy Data Models."""
 from sqlalchemy import Column
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql.expression import false
 from sqlalchemy.sql.sqltypes import Boolean
 from sqlalchemy.types import Integer, Text, String, DateTime, Float
-from sqlalchemy.sql import func
 
 from meliora.persistance.database import engine
 

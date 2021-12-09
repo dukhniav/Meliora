@@ -1,3 +1,4 @@
+# pylint: disable=broad-except
 """
 Meliora portoflio rebalancing
 """
@@ -20,7 +21,7 @@ if __version__ == "develop":
             # Try Fallback to admoneo_commit file (created by CI while building docker image)
             from pathlib import Path
 
-            versionfile = Path("./admoneo_commit")
+            versionfile = Path("./meliora_commit")
             if versionfile.is_file():
                 __version__ = f"docker-{versionfile.read_text()[:8]}"
         except Exception:

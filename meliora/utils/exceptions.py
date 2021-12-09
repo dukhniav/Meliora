@@ -1,3 +1,8 @@
+"""
+Exemptions
+"""
+
+
 class MelioraException(Exception):
     """
     Meliora base exception. Handled at the outermost level.
