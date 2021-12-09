@@ -1,3 +1,4 @@
+"""Types of reward types"""
 from enum import Enum
 
 

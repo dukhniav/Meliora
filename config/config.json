@@ -1,16 +1,12 @@
 {
-    "app": {
-        "run_mode": "backtest",
-        "DEBUG": true
+    "base": {
+        "init_run_mode": "dry_run",
+        "init_state": "running"
     },
     "transaction": {
-        "fiat": "USD"
+        "fiat": "USDT"
     },
-    "DATABASE": {
-        "USERNAME": "xiaoxu",
-        "PASSWORD": "xiaoxu",
-        "HOST": "127.0.0.1",
-        "PORT": 5432,
-        "DB": "xiaoxu_database"
+    "backtesting": {
+        "starting_wallet": 100
     }
 }

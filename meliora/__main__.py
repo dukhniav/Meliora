@@ -1,3 +1,4 @@
+"""Main init"""
 from meliora.main import main
 
 

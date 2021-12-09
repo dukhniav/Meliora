@@ -143,4 +143,5 @@ dmypy.json
 /data/trans
 /data/test_transactions.txt
 /data/sample_coins.txt
-/config
+/config/credentials.json
+/config/config.json

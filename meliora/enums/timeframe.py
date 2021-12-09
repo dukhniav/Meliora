@@ -1,3 +1,4 @@
+"""Types of timeframes"""
 from enum import Enum
 
 

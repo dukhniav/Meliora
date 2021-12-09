@@ -1,3 +1,4 @@
+"""Types of fees"""
 from enum import Enum
 
 

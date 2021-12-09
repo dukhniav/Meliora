@@ -1,3 +1,4 @@
+"""Types of notification types"""
 from enum import Enum
 
 

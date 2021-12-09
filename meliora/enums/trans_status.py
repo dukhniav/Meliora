@@ -1,3 +1,4 @@
+"""Types of transaction statuses"""
 from enum import Enum
 
 
