@@ -5,6 +5,13 @@ bot constants
 """
 from typing import List, Tuple
 
+# Paths
+CREDENTIALS_PATH = './config/credentials.json'
+CONFIG_PATH = './config/config.json'
+LIVE_DB_PATH = './data/meliora.sqlite'
+DRY_DB_PATH = './data/meliora_dry.sqlite'
+TESTING_DB_PATH = '.data/meliora_test.sqlite'
+COIN_LIST = './data/test_coin_list.txt'
 
 DEFAULT_CONFIG = 'config.json'
 DEFAULT_EXCHANGE = 'bittrex'

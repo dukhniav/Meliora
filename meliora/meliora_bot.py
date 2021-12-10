@@ -21,17 +21,15 @@ class Meliora:
         else:
             self.init_live_run()
 
-
-
-    def __init_modules(self): # pylint: disable=no-self-use
+    def __init_modules(self):  # pylint: disable=no-self-use
         """Initializing submodules"""
         logger.info("Initializing submodules")
         self.scheduler = SafeScheduler()
 
-    def init_dry_run(self): # pylint: disable=no-self-use
+    def init_dry_run(self):  # pylint: disable=no-self-use
         """Initiating dry run"""
         logger.info("Starting bot in dry run mode")
 
-    def init_live_run(self): # pylint: disable=no-self-use
+    def init_live_run(self):  # pylint: disable=no-self-use
         """Initiating live mode"""
         logger.info("Starting bot in live mode")

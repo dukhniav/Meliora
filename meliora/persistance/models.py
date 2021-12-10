@@ -1,14 +1,49 @@
 # pylint: disable=too-few-public-methods
 """SQLAlchemy Data Models."""
-from sqlalchemy import Column
+from sqlalchemy import Column, create_engine
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql.expression import false
 from sqlalchemy.sql.sqltypes import Boolean
 from sqlalchemy.types import Integer, Text, String, DateTime, Float
+from meliora.enums import RunMode
 
-from meliora.persistance.database import engine
 
 _DECL_BASE = declarative_base()
+_SQL_DOCS_URL = 'http://docs.sqlalchemy.org/en/latest/core/engines.html#database-urls'
+
+
+def init_db(run_mode: RunMode):
+    """
+    Initializes this module with the given config,
+    registers all known command handlers
+    and starts polling for message updates
+    :param run_mode: RunMode
+    :return: None
+    """
+    db_url = 'sqlite://'
+    match run_mode:
+        case RunMode.DRY_RUN:
+            return db_url + RunMode.DRY_RUN.__repr__()
+        case RunMode.BACKTEST:
+            return db_url + RunMode.BACKTEST.__repr__()
+        case _:
+            return db_url + RunMode.LIVE.__repr__()
+
+    try:
+        engine = create_engine(db_url, **kwargs)
+    except NoSuchModuleError:
+        raise OperationalException(f"Given value for db_url: '{db_url}' "
+                                   f"is not valid database URL! (See {_SQL_DOCS_URL})")
+
+    # https://docs.sqlalchemy.org/en/13/orm/contextual.html#thread-local-scope
+    # Scoped sessions proxy requests to the appropriate thread-local session.
+    # We should use the scoped_session object - not a seperately initialized version
+    Session = sessionmaker(bind=self.engine)
+    self.session = Session()
+
+    _DECL_BASE.metadata.create_all(engine)
+    # check_migrate(engine, decl_base=_DECL_BASE, previous_tables=previous_tables)
 
 
 class Coin(_DECL_BASE):
@@ -76,6 +111,6 @@ class Transaction(_DECL_BASE):
     trace_id = Column(String(255), nullable=False)
     is_error = Column(Boolean, nullable=False)
     err_code = Column(String(255), nullable=False)
+    blockchain = Column(String(255), nullable=False)
 
 
-_DECL_BASE.metadata.create_all(engine)
