@@ -1,7 +1,10 @@
 {
     "base": {
-        "init_run_mode": "dry_run",
-        "init_state": "running"
+        "init_run_mode": "",
+        "init_state": "running",
+        "default_exchange": "binanceus",
+        "default_fiat": "USDT",
+        "default_timeframe": "1h"
     },
     "transaction": {
         "fiat": "USDT"

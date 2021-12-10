@@ -6,9 +6,10 @@ This module contains the configuration class
 import logging
 import json
 
+from meliora.enums import RunMode, State, Exchange, Fiat
+from meliora.config import constants
+
 logger = logging.getLogger(__name__)
-CREDENTIALS_PATH = './config/credentials.json'
-CONFIG_PATH = './config/config.json'
 
 
 class Configuration:
@@ -18,17 +19,25 @@ class Configuration:
     """
 
     def __init__(self):
-        with open(CREDENTIALS_PATH, "r") as jsonfile:
+        with open(constants.CREDENTIALS_PATH, "r") as jsonfile:
             self.credentials = json.load(jsonfile)
 
-        with open(CONFIG_PATH, "r") as jsonfile:
+        with open(constants.CONFIG_PATH, "r") as jsonfile:
             self.config = json.load(jsonfile)
 
+        # Credentials
         self.BSC_API_KEY = self.credentials['bscscan']['api_key']
 
         # Testing
         self.BSC_ADDRESS = self.credentials['testing']['test_bsc_address']
 
         # Base config
-        self.INIT_MODE = self.config['base']['init_run_mode']
-        self.INIT_STATE = self.config['base']['init_state']
+        self.DEFAULT_MODE = self.config['base']['init_run_mode'] or RunMode.DRY_RUN
+        self.DEFAULT_STATE = self.config['base']['init_state'] or State.RUNNING
+        self.DEFAULT_EXCHANGE = self.config['base']['default_exchange'] or Exchange.BINANCEUS
+        self.DEFAULT_FIAT = self.config['base']['default_fiat'] or Fiat.USDT
+        self.DEFAULT_TIMEFRAME = self.config['base']['default_timeframe'] or '1h'
+
+        # Default functionality
+        self.HEARTBEAT_INTERVAL = 3600  # seconds (1 hour)
+        self.BOT_SLEEP_TIME = 1  # seconds

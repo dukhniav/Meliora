@@ -136,12 +136,16 @@ dmypy.json
 .history/
 .DS_Store
 
+# PyCharm
+.idea/
+
 /include
 
 # meliora
 /data/historical_data/*
 /data/trans
 /data/test_transactions.txt
-/data/sample_coins.txt
+/data/test_coin_list.txt
 /config/credentials.json
 /config/config.json
+random_testing.py

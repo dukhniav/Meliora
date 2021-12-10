@@ -3,10 +3,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-engine = create_engine(
-    'sqlite:///data/meliora.db',
-    #echo=True,
-    future=True
-)
-Session = sessionmaker(bind=engine)
-session = Session()
+class Database:
+    """Database class"""
+    def __init__(self, db_path):
+        self.engine = create_engine(
+            'sqlite:///data/'+db_path,
+            future=True
+        )
+        Session = sessionmaker(bind=self.engine)
+        self.session = Session()
