@@ -9,7 +9,7 @@ Crypto portfolio manager
 ### Table of contents
 1. Background Info
    1. [Deciphering transactions](/docs/deciphering_transactions.md)
-   2. [Database info](#Database Info)
+   2. [Database info](#database-info)
 
 
 ### Database Info
