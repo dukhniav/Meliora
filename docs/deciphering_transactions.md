@@ -1,0 +1,14 @@
+### Components of an Ethereum Transaction on Etherscan
+- **Transaction Hash**: A unique identifier that can be used to locate a specific transaction.
+- **Status**: The current state of a transaction (Success, Failed, or Pending).
+- **Block**: The block number that the transaction was included in.
+- **Timestamp**: The time that the block was mined in UTC.
+- **From**: The account that originally sent the transaction.
+- **To**: The account that the transaction is addressed to.
+- **Value**: The amount of Ether included in the transaction.
+- **Transaction Fee**: The amount of Ether paid to the miner for processing the transaction, which is calculated by multiplying the amount of gas used by the gas price.
+- **Gas Limit**: The upper limit of how much computational work and storage the sender is willing to expend on the transaction.
+- **Gas Used by Transaction**: The amount of computational work and storage used in the transaction.
+- **Gas Price**: The amount of Ether per unit of gas the user is willing to pay for the transaction, commonly denoted in a subunit of Ether known as Gwei. 1 Gwei = 1x10^-9 Ether.
+- **Nonce**: The count of transactions sent out of the account. The number is initialized at 0 and is incremented by 1 for each transaction sent.
+- **Input Data**: Information that is passed to a smart contract when a transaction is sent to its address. However, if the transaction is creating a contract, the contract’s bytecode is placed in the input data field.

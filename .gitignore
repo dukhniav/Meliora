@@ -141,11 +141,15 @@ dmypy.json
 
 /include
 
+# db stuff
+*.sqlite
+
 # meliora
-/data/historical_data/*
-/data/trans
-/data/test_transactions.txt
-/data/test_coin_list.txt
-/config/credentials.json
-/config/config.json
+data/
+config/
 random_testing.py
+meliora.old/
+
+# config
+credentials.json
+wallets.json
