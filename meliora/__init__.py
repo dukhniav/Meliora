@@ -1,6 +1,6 @@
 # pylint: disable=broad-except
 """
-Meliora portoflio rebalancing
+Meliora portfolio
 """
 
 __version__ = "develop"

@@ -4,4 +4,21 @@
 [![Pylint](https://github.com/dukhniav/meliora/actions/workflows/pylint.yml/badge.svg)](https://github.com/dukhniav/meliora/actions/workflows/pylint.yml)
 
 # Meliora
-Crypto asset manager
+Crypto portfolio manager
+
+### Table of contents
+1. Background Info
+   1. [Deciphering transactions](/docs/deciphering_transactions.md)
+   2. [Database info](#Database Info)
+
+
+### Database Info
+Database schema (work in progress)
+![database schema](/docs/db_schema.png)
+
+#### Tables
+- Portfolios
+- Wallets
+- Networks
+- Assets
+- Transactions
